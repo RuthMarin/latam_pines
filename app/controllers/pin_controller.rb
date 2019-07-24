@@ -1,0 +1,2 @@
+class PinController < ApplicationController
+end
