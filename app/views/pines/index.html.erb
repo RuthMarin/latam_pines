@@ -1,7 +1,22 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Pines</h1>
+<div class="g g--masonry-2-to3-up">
+  <% @pines.each do |pine| %>
+  <div class="g__item">
+    <div class="block">
+      <%= image_tag(pine.foto, class:'block__img') %>
+      <h2 class="block__title"><%= pine.nombre %></h2>
+    </div><!--end block-->
+  </div><!--end g__item-->
 
+
+<% end %>
+</div><!--end g-->
+
+<section>
+  New Section stuff Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit odio consequuntur corrupti facilis perferendis quo quaerat fugiat maxime libero corporis, accusantium saepe, repellendus ratione odit impedit, explicabo mollitia veritatis, nulla.
+</section>
 <table>
   <thead>
     <tr>
