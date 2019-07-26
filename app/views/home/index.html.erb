@@ -1,0 +1,48 @@
+<ul>
+  <% if user_signed_in? %>
+  <li>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  </li>
+  <li>
+    <%= current_user.email %>
+    <p id="notice"><%= notice %></p>
+    <div class="g g--masonry-2-to3-up">
+      <% @pines.each do |pine| %>
+      <div class="g__item">
+        <div class="block">
+          <%= image_tag(pine.foto, class:'block__img') %>
+          <h3 class="block__title"><%= pine.nombre %></h3>
+          <h5 class="block__title"><%= pine.descripcin %></h5>
+          <i class="fas fa-heart fa-lg"><%= pine.likes %></i>
+
+        </div><!--end block-->
+      </div><!--end g__item-->
+    <% end %>
+    </div><!--end g-->
+
+  </li>
+  <%else%>
+  <li>
+    <%= link_to "sign in", new_user_session_path %>
+  </li>
+  <li>
+    <%= link_to "sign UP", new_user_registration_path %>
+  </li>
+  <%end %>
+</ul>
+
+
+<form>
+
+  <div class="container">
+    <div class="container">
+      <%= image_tag "logo.png" , :style => "width:300px"%>
+    </div>
+    <div class="container">
+      <%= link_to "Inicio Sesión", new_user_session_path , :class => 'btn btn-info'%>
+      <%= link_to "Registrarse", new_user_registration_path , :class => 'btn btn-warning' %>
+    </div>
+  </div>
+
+
+</form>
