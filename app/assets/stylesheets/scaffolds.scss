@@ -1,84 +1,98 @@
+/*------------------------------------*\
+    #GLOBAL/IRRELEVANT STUFF
+\*------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #fff;
-  color: #333;
-  margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  background: #f8f9f4;
+  margin-left: 30px;
+  margin-right: 30px;
+
+
+
 }
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+section {
+  background: #eaefce;
+  padding: 2rem 1rem;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+
+
+
+
+/*------------------------------------*\
+    #BLOCK
+\*------------------------------------*/
+.block {
+  background: #fff;
+  border: 1px solid #ddd;
 }
 
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
+.block__title {
+  margin: 0;
+  padding: 0.5rem;
 }
 
-th {
-  padding-bottom: 5px;
-}
-
-td {
-  padding: 0 5px 7px;
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
-  }
-
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
-}
-
-label {
+.block__img {
+  max-width: 100%;
+  width: 100%;
   display: block;
+}
+
+
+
+
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+
+/**
+ * Grid object
+ * 1) Over-arching grid container
+ * 2) Creates overlap effect with content below
+ */
+.g {
+  padding: 0.5rem;
+  max-width: 84rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.fas{
+  margin-left: 0.5em;
+
+}
+
+/**
+ * 2-to-3-up masonry grid
+ * 1) Creates a Pinterest-style, masonry grid with blocks of varying heights.
+ * 2) Set number of columns to display
+ */
+.g--masonry-2-to3-up {
+  column-count: 4; /* 2 */
+  column-gap: 0;
+
+  @media all and (min-width: 40em) {
+    column-count: 3; /* 2 */
+  }
+
+  @media all and (min-width: 56em) {
+    column-count: 4; /* 2 */
+  }
+}
+
+/**
+ * Grid item
+ * 1) Direct child of the grid container element
+ * 2) Prevents content from splitting up because of the
+ *    parent's CSS columns
+ */
+.g__item {
+  padding: 0.5rem;
+  -webkit-column-break-inside: avoid; /* 2 */
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
