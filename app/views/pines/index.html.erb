@@ -16,32 +16,3 @@
 <section>
   New Section stuff Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit odio consequuntur corrupti facilis perferendis quo quaerat fugiat maxime libero corporis, accusantium saepe, repellendus ratione odit impedit, explicabo mollitia veritatis, nulla.
 </section>
-<table>
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Descripcin</th>
-      <th>Foto</th>
-      <th>Likes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pines.each do |pine| %>
-      <tr>
-        <td><%= pine.nombre %></td>
-        <td><%= pine.descripcin %></td>
-        <td><%= pine.foto %></td>
-        <td><%= pine.likes %></td>
-        <td><%= link_to 'Show', pine %></td>
-        <td><%= link_to 'Edit', edit_pine_path(pine) %></td>
-        <td><%= link_to 'Destroy', pine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Pine', new_pine_path %>
