@@ -34,17 +34,20 @@
       </li>
       <%end %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <form class="form-inline my-2 my-lg-0" action="<%= pines_path %>">
+          <input class="form-control mr-sm-2 btn-sm" type="search" placeholder="Buscar" aria-label="Search" name="q">
+          <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" type="submit">Buscar</button>
+        </form>
     <div class="nav-item active">
+      <% if user_signed_in? %>
        <a href='home/index'class="fas fa-user fa-lg"></a>
+       <% end %>
     </div>
+
+
   </div>
 </nav>
 
-    <title>Demo</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>

@@ -4,7 +4,11 @@ class PinesController < ApplicationController
   # GET /pines
   # GET /pines.json
   def index
-    @pines = Pine.all
+    if params[:q].present?
+      @pines = Pine.where('nombre like ?', "%#{params[:q]}%")
+    else
+      @pines = Pine.all
+    end
   end
 
   # GET /pines/1
