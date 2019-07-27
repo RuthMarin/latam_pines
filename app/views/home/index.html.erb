@@ -1,15 +1,13 @@
 <ul>
   <% if user_signed_in? %>
-  <li>
-    <%= current_user.email %>
-    <%= current_user.id %>
-      <%= link_to 'Agregar Pin', new_pine_path,:class => 'btn btn-success' %>
+<%= link_to 'Agregar Pin', new_pine_path,:class => 'btn btn-success' %>
 
     <br>
 
 
     <p id="notice"><%= notice %></p>
     <div class="g g--masonry-2-to3-up">
+
       <% @pines.each do |pine| %>
       <div class="g__item">
         <div class="block">
@@ -25,22 +23,9 @@
           <td><%= link_to 'Eliminar', pine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </div><!--end block-->
       </div><!--end g__item-->
-    <% end %>
+      <% end %>
     </div><!--end g-->
 
-  </li>
-  <%else%>
-  <form>
-    <div class="container">
-      <div class="container">
-        <%= image_tag "logo.png" , :style => "width:300px"%>
-      </div>
-      <div class="container">
-        <%= link_to "Inicio Sesión", new_user_session_path , :class => 'btn btn-info'%>
-        <%= link_to "Registrarse", new_user_registration_path , :class => 'btn btn-warning' %>
-      </div>
-    </div>
-  </form>
 
   <%end %>
 </ul>

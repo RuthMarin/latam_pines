@@ -1,3 +1,17 @@
+<% if user_signed_in? %>
+<% else %>
+<form>
+    <div class="container">
+      <div class="container">
+        <%= image_tag "logo.png" , :style => "width:300px"%>
+      </div>
+      <div class="container">
+        <%= link_to "Inicio Sesión", new_user_session_path , :class => 'btn btn-info'%>
+        <%= link_to "Registrarse", new_user_registration_path , :class => 'btn btn-warning' %>
+      </div>
+    </div>
+  </form>
+<% end%>
 <p id="notice"><%= notice %></p>
 <div class="g g--masonry-2-to3-up">
   <% @pines.each do |pine| %>
@@ -14,5 +28,8 @@
 </div><!--end g-->
 
 <section>
-  New Section stuff Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit odio consequuntur corrupti facilis perferendis quo quaerat fugiat maxime libero corporis, accusantium saepe, repellendus ratione odit impedit, explicabo mollitia veritatis, nulla.
+  "Pinterest es una plataforma para compartir imágenes que permite a los usuarios crear y
+  administrar, en tableros personales temáticos, colecciones de imágenes como eventos, intereses,
+  hobbies y mucho más. Los usuarios pueden buscar otros pinboards, "repinear" imágenes para sus
+  propias colecciones o marcarlas con un me gusta."
 </section>

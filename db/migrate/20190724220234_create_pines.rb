@@ -5,6 +5,7 @@ class CreatePines < ActiveRecord::Migration[5.2]
       t.string :descripcin
       t.string :foto
       t.integer :likes
+      t.integer :user_id
 
       t.timestamps
     end

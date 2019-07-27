@@ -1,6 +1,6 @@
 class PinesController < ApplicationController
   before_action :set_pine, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:show, :index]
   # GET /pines
   # GET /pines.json
   def index
@@ -25,7 +25,7 @@ class PinesController < ApplicationController
   # POST /pines.json
   def create
     @pine = Pine.new(pine_params)
-
+    @pine.user= current_user
     respond_to do |format|
       if @pine.save
         format.html { redirect_to @pine, notice: 'Pine was successfully created.' }
@@ -69,6 +69,7 @@ class PinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pine_params
-      params.require(:pine).permit(:nombre, :descripcin, :foto, :likes)
+      @user_oid = current_user.id
+      params.require(:pine).permit(:nombre, :descripcion, :foto)
     end
 end
