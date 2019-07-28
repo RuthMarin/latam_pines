@@ -27,7 +27,7 @@
       </li>
       <% if user_signed_in? %>
         <li class="nav-item active">
-      <button type="button" class="btn btn-info" >Favoritos</button>
+      <a class="btn btn-primary" href="likes/index" role="button"  >Favoritos</a>
       </li>
       <li class="nav-item active">
         <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete,  :class => 'btn btn-danger',:style => " margin-left:10px;" %>

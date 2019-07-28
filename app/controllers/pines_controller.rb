@@ -3,17 +3,24 @@ class PinesController < ApplicationController
   before_action :authenticate_user!, except: [:show, :index]
   # GET /pines
   # GET /pines.json
+
+
+
   def index
     if params[:q].present?
       @pines = Pine.where('nombre like ?', "%#{params[:q]}%")
+      @likes = Like.all
     else
       @pines = Pine.all
+      @likes = Like.all
     end
   end
 
   # GET /pines/1
   # GET /pines/1.json
   def show
+
+
   end
 
   # GET /pines/new
@@ -74,6 +81,6 @@ class PinesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pine_params
       @user_oid = current_user.id
-      params.require(:pine).permit(:nombre, :descripcion, :foto)
+      params.require(:pine).permit(:nombre, :descripcion, :foto, :likes)
     end
 end

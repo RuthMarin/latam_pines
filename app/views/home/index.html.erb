@@ -13,9 +13,6 @@
       <% @pines.each do |pine| %>
       <div class="g__item">
         <div class="block">
-          <button type="button" class="btn btn-secondary">
-            <span class="glyphicon glyphicon-thumbs-up"><i class="far fa-thumbs-up"></i></span> Like
-          </button>
           <%= image_tag(pine.foto, class:'block__img') %>
           <h3 class="block__title"><%= pine.nombre %></h3>
           <h5 class="block__title"><%= pine.descripcin %></h5>
