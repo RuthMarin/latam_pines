@@ -2,15 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1; background:#ffff;}
+form {border: 3px solid #f1f1f1; background:#ffff;align-items: center;}
 
 input[type=text], input[type=password] {
-  width: 100%;
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  justify-content:center;
+  align-items: center;
 }
 
 
@@ -27,10 +29,13 @@ img.avatar {
 .container {
   text-align:center;
   padding: 16px;
+  justify-content:center;
+  align-items: center;
 }
 
 span.psw {
-  float: right;
+  justify-content:center;
+  align-items: center;
   padding-top: 16px;
 }
 
@@ -43,4 +48,9 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+input[value="read more"]{ display:none; }
+
+input[value="read more"]{
+display:none;
 }

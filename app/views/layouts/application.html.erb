@@ -29,9 +29,6 @@
         <li class="nav-item active">
       <a class="btn btn-primary" href="likes/index" role="button"  >Favoritos</a>
       </li>
-      <li class="nav-item active">
-        <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete,  :class => 'btn btn-danger',:style => " margin-left:10px;" %>
-      </li>
       <%end %>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="<%= pines_path %>">
@@ -41,6 +38,7 @@
     <div class="nav-item active">
       <% if user_signed_in? %>
        <a href='home/index'class="fas fa-user fa-lg"></a>
+         <%= link_to "Salir", destroy_user_session_path, method: :delete,  :class => 'btn btn-danger',:style => " margin-left:10px;" %>
        <% end %>
     </div>
 

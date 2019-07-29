@@ -15,7 +15,11 @@ section {
   background: #eaefce;
   padding: 2rem 1rem;
 }
+input[value="read more"]{ display:none; }
 
+input[value="read more"]{
+display:none;
+}
 
 
 
